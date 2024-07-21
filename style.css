@@ -1,0 +1,184 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* background: #6990f2; */
+     background: #0d102c;
+    /* background-image: linear-gradient(
+        23deg,
+        hsl(49deg 100% 69%) 0%,
+        hsl(16deg 80% 61%) 2%,
+        hsl(330deg 81% 34%) 12%,
+        hsl(259deg 100% 15%) 50%,
+        hsl(212deg 100% 25%) 88%,
+        hsl(197deg 100% 30%) 98%); */
+} 
+
+.wrapper{
+    width: 430px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.wrapper header{
+    color: #6990f2;
+    font-size: 27px;
+    font-weight: 600;
+    text-align: center;
+}
+.wrapper form{
+    height: 167px;
+    display: flex;
+    margin: 30px 0;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+   border: 2px dashed #6990f2;
+}
+form :where(i, p){
+    color: #6990f2;
+}
+form i {
+    font-size: 50px;
+}
+form p {
+    font-size: 16px;
+    margin-top: 2px;
+    
+}
+.icon-container{
+    width: 75px;
+    height: 100px;
+    position: relative;
+    margin-top: 30px;
+}
+
+.icon-container img{
+    width: 75px;
+    position: absolute;
+    transform-origin: bottom;
+    transition: transform 250ms ease-in-out;
+}
+.icon-container .center{
+    z-index: 2;
+}
+
+.icon-container .right, .icon-container .left{
+    filter: grayscale(.5);
+    transform: scale(0.9);
+}
+.dragged .icon-container .right{
+    transform: rotate(10deg) translateX(20px) scale(0.9);
+}
+
+
+.dragged .icon-container .left{
+    transform: rotate(-10deg) translateX(-20px) scale(0.9);
+}
+.dragged .icon-container .center {
+    transform: translateY(-5px);
+}
+
+section .row{
+  background: #e9f0ff;
+  margin-bottom: 10px;
+  list-style: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} 
+section .row i {
+    font-size: 30px;
+    color: #6990f2;
+}
+section .details span{
+   font-size: 14px;
+}
+.progress-area .row .content{
+    width: 100%;
+    margin-left: 15px ;
+}
+.progress-area .details{
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+    justify-content: space-between;
+}
+.progress-area .progress-bar{
+    height: 6px;
+    width: 100%;
+   background: #ffff;
+   margin-bottom: 4px;
+   border-radius: 30px;
+}
+.progress-bar .progress{
+    height: 100%;
+    width: 0%;
+    background: #6990f2;
+    border-radius: inherit;
+}
+.Uploaded-area{
+    max-height: 1500px;
+    overflow-y: scroll;
+    cursor: pointer;
+
+}
+.Uploaded-area.onprogress{
+    max-height: 150px;
+}
+.Uploaded-area ::-webkit-scrollbar{
+width: 0px;
+}
+.Uploaded-area .row .content{
+   display: flex;
+   align-items: center;
+}
+.Uploaded-area .row .details{
+  display: flex;
+  margin-left: 15px;
+  flex-direction: column;
+}
+.Uploaded-area .details .size{
+    font-size: 11px;
+    color: #404040;
+}
+.Uploaded-area .fa-check{
+    color: #6990f2;
+    font-size: 16px;
+}
+
+.upload-vector{
+    background: url(./img/undraw_uploading.svg) no-repeat center;
+    background-size: contain;
+    height: 50vh;
+    width: 50vw;
+}
+
+@media screen  and (max-width: 900px) {
+   :root{
+      --container-width: 320px;
+   }   
+   .upload-vector{
+    display: none;
+   }
+   .email-container .field{
+    flex-direction: column;
+    width: 300px;
+   }
+}
